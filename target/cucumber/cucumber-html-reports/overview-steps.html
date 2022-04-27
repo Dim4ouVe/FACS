@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.tablesorter.min.js"></script>
+<script src="js/Chart.min.js"></script>
+<script src="js/moment.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"/>
+<link rel="stylesheet" href="css/cucumber.css" type="text/css"/>
+<link rel="stylesheet" href="css/font-awesome.min.css"/>
+<link rel="shortcut icon" href="images/favicon.png"/>
+
+<script>
+$(document).ready(function() {
+    // this will tell tablesorter to try looking for the data-value attribute
+    // if present, it'll sort by that instead
+    // otherwise, it'll sort by the text content of the table cell
+    $("#tablesorter").tablesorter({
+        textAttribute: 'data-value',
+        // ignores the first row of the header, the 'scenario', 'steps', since
+        // sorting those doesn't make sense
+        selectorHeaders: '> thead tr:not(.dont-sort) th',
+        // use a stable sort
+        sortStable: true
+    });
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+<title>Cucumber Reports  - Steps Overview</title>
+
+</head>
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navigation">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse">
+      <p class="navbar-text navbar-left">Cucumber Report</p>
+      <ul class="nav navbar-nav navbar-right">
+        <li role="presentation" ><a href="overview-features.html">Features</a></li>
+        <li role="presentation" ><a href="overview-tags.html">Tags</a></li>
+        <li role="presentation"     class="active" ><a href="overview-steps.html">Steps</a></li>
+        <li role="presentation" ><a href="overview-failures.html">Failures</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<div class="container-fluid">
+  <div class="col-md-5 col-md-offset-1">
+
+<table class="table table-bordered" id="build-info">
+  <thead>
+    <tr>
+      <th>Project</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="info">
+      <td>No Name (add projectName to cucumber-reporting.properties)</td>
+      <td>27 Apr 2022, 09:44</td>
+    </tr>
+  </tbody>
+</table>
+
+  </div>
+  <div class="col-md-3 col-md-offset-2">
+  </div>
+</div>
+
+
+<div id="report-lead" class="container-fluid">
+  <div class="col-md-10 col-md-offset-1">
+    <h2>Steps Statistics</h2>
+      <p>The following graph shows step statistics for this build. Below list is based on results.
+ step does not provide information about result then is not listed below.
+ Additionally @Before and @After are not counted because they are part of the scenarios, not steps.</p>
+  </div>
+</div>
+
+<div class="container-fluid" id="report">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+      <table id="tablesorter" class="stats-table table-hover">
+
+        <thead>
+          <tr class="header">
+            <th>Implementation</th>
+            <th>Occurrences</th>
+            <th>Average duration</th>
+            <th>Max duration</th>
+            <th>Total durations</th>
+            <th>Ratio</th>
+          </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+              <td class="location">com.facs.step_definitions.Hooks.teardownScenario(io.cucumber.java.Scenario)</td>
+              <td>8</td>
+              <td class="duration" data-value="893052737">0.893</td>
+              <td class="duration" data-value="893052737">0.994</td>
+              <td class="duration" data-value="7144421900">7.144</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.facs.step_definitions.entryServices_step_definitions.entryUserCreateShouldBeDeleted()</td>
+              <td>1</td>
+              <td class="duration" data-value="314668100">0.314</td>
+              <td class="duration" data-value="314668100">0.314</td>
+              <td class="duration" data-value="314668100">0.314</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.facs.step_definitions.entryServices_step_definitions.entry_id_will_appear_in_the_url()</td>
+              <td>1</td>
+              <td class="duration" data-value="182808200">0.182</td>
+              <td class="duration" data-value="182808200">0.182</td>
+              <td class="duration" data-value="182808200">0.182</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.facs.step_definitions.entryServices_step_definitions.entry_should_exist_in_the_selected_project_s_service_listing()</td>
+              <td>1</td>
+              <td class="duration" data-value="2322397200">2.322</td>
+              <td class="duration" data-value="2322397200">2.322</td>
+              <td class="duration" data-value="2322397200">2.322</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.facs.step_definitions.entryServices_step_definitions.page_should_load_without_errors()</td>
+              <td>1</td>
+              <td class="duration" data-value="209032500">0.209</td>
+              <td class="duration" data-value="209032500">0.209</td>
+              <td class="duration" data-value="209032500">0.209</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.facs.step_definitions.entryServices_step_definitions.userGoBackToTheListAndDeleteHisEntry()</td>
+              <td>1</td>
+              <td class="duration" data-value="1596034700">1.596</td>
+              <td class="duration" data-value="1596034700">1.596</td>
+              <td class="duration" data-value="1596034700">1.596</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.facs.step_definitions.entryServices_step_definitions.userSelectBMPInspectionFromService()</td>
+              <td>2</td>
+              <td class="duration" data-value="1512692750">1.512</td>
+              <td class="duration" data-value="1512692750">1.518</td>
+              <td class="duration" data-value="3025385500">3.025</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.facs.step_definitions.entryServices_step_definitions.user_select_new()</td>
+              <td>2</td>
+              <td class="duration" data-value="3368795500">3.368</td>
+              <td class="duration" data-value="3368795500">3.552</td>
+              <td class="duration" data-value="6737591000">6.737</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.facs.step_definitions.login_step_definitions.user_enter_invalid_portal_username_and_password()</td>
+              <td>1</td>
+              <td class="duration" data-value="896063600">0.896</td>
+              <td class="duration" data-value="896063600">0.896</td>
+              <td class="duration" data-value="896063600">0.896</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.facs.step_definitions.login_step_definitions.user_enter_valid_portal_username_and_password()</td>
+              <td>1</td>
+              <td class="duration" data-value="2996307400">2.996</td>
+              <td class="duration" data-value="2996307400">2.996</td>
+              <td class="duration" data-value="2996307400">2.996</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.facs.step_definitions.login_step_definitions.user_is_on_the_home_page()</td>
+              <td>2</td>
+              <td class="duration" data-value="4161819050">4.161</td>
+              <td class="duration" data-value="4161819050">4.866</td>
+              <td class="duration" data-value="8323638100">8.323</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.facs.step_definitions.login_step_definitions.user_should_see_be_directed_to_main_page_and_see_the_projects()</td>
+              <td>1</td>
+              <td class="duration" data-value="55443300">0.055</td>
+              <td class="duration" data-value="55443300">0.055</td>
+              <td class="duration" data-value="55443300">0.055</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.facs.step_definitions.login_step_definitions.user_should_see_error_message()</td>
+              <td>1</td>
+              <td class="duration" data-value="72674000">0.072</td>
+              <td class="duration" data-value="72674000">0.072</td>
+              <td class="duration" data-value="72674000">0.072</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.facs.step_definitions.selectProject_step_definitions.user_click_on_qaqc()</td>
+              <td>1</td>
+              <td class="duration" data-value="1315477100">1.315</td>
+              <td class="duration" data-value="1315477100">1.315</td>
+              <td class="duration" data-value="1315477100">1.315</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.facs.step_definitions.selectProject_step_definitions.user_is_login_with_valid_credentials()</td>
+              <td>6</td>
+              <td class="duration" data-value="9401393816">9.401</td>
+              <td class="duration" data-value="9401393816">12.867</td>
+              <td class="duration" data-value="56408362900">56.408</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.facs.step_definitions.selectProject_step_definitions.user_select_project_from_the_dropdown_menu()</td>
+              <td>3</td>
+              <td class="duration" data-value="1707067866">1.707</td>
+              <td class="duration" data-value="1707067866">1.854</td>
+              <td class="duration" data-value="5121203600">5.121</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.facs.step_definitions.selectProject_step_definitions.user_should_be_able_to_see_reports()</td>
+              <td>1</td>
+              <td class="duration" data-value="56938500">0.056</td>
+              <td class="duration" data-value="56938500">0.056</td>
+              <td class="duration" data-value="56938500">0.056</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.facs.step_definitions.selectProject_step_definitions.user_should_see_projects()</td>
+              <td>1</td>
+              <td class="duration" data-value="104140600">0.104</td>
+              <td class="duration" data-value="104140600">0.104</td>
+              <td class="duration" data-value="104140600">0.104</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.facs.step_definitions.selectService_step_definitions.userSelectService()</td>
+              <td>1</td>
+              <td class="duration" data-value="1399004000">1.399</td>
+              <td class="duration" data-value="1399004000">1.399</td>
+              <td class="duration" data-value="1399004000">1.399</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.facs.step_definitions.selectService_step_definitions.userShouldSeeAllServicesForTheCurrentProject()</td>
+              <td>1</td>
+              <td class="duration" data-value="246491100">0.246</td>
+              <td class="duration" data-value="246491100">0.246</td>
+              <td class="duration" data-value="246491100">0.246</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.facs.step_definitions.selectService_step_definitions.user_select_service_out_of_the_project()</td>
+              <td>1</td>
+              <td class="duration" data-value="160332300">0.160</td>
+              <td class="duration" data-value="160332300">0.160</td>
+              <td class="duration" data-value="160332300">0.160</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.facs.step_definitions.selectService_step_definitions.user_should_see_services_for_all_projects()</td>
+              <td>1</td>
+              <td class="duration" data-value="222519100">0.222</td>
+              <td class="duration" data-value="222519100">0.222</td>
+              <td class="duration" data-value="222519100">0.222</td>
+              <td class="passed">100.00%</td>
+            </tr>
+        </tbody>
+
+        <tfoot class="total">
+          <tr>
+            <td>22</td>
+            <td>39</td>
+            <td class="duration">2.536</td>
+            <td class="duration">56.408</td>
+            <td class="duration">1:38.910</td>
+            <td>Totals</td>
+          </tr>
+        </tfoot>
+
+      </table>
+    </div>
+  </div>
+</div>
+
+
+<nav class="navbar navbar-default" id="footer">
+  <div class="container-fluid">
+    <p class="navbar-text navbar-right">
+        <small>generate Cucumber HTML reports via:&nbsp;</small>
+        <a class="navbar-link" href="https://github.com/jenkinsci/cucumber-reports-plugin">Jenkins Plugin</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-reporting">Standalone</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-sandwich">Sandwich</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/maven-cucumber-reporting">Maven</a>
+        &nbsp;&nbsp;
+    </p>
+  </div>
+</nav>
+
+</body>
+</html>
