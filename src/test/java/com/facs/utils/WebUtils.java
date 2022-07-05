@@ -4,6 +4,8 @@ import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
+import java.text.DateFormat;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
@@ -79,6 +81,11 @@ public class WebUtils {
 
         }
 
+    }
+
+    public static String getDate(){
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        return dtf.format(java.time.LocalDate.now());
     }
 
 }

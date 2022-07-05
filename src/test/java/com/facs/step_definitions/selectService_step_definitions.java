@@ -1,30 +1,22 @@
 package com.facs.step_definitions;
 
-import com.facs.pages.LoginPage;
 import com.facs.pages.MainPage;
-import com.facs.utils.Driver;
-import com.facs.utils.WebUtils;
+import com.facs.pages.ServiceGrid;
+import com.facs.utils.FacsUtils;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
-import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class selectService_step_definitions {
 
     MainPage mainPage = new MainPage();
+    ServiceGrid testProjectRFI = new ServiceGrid();
 
 
-
-    @When("user select Service out of the project")
-    public void user_select_service_out_of_the_project() {
-
-        mainPage.serviceBtn.click();
-
-
-    }
     @Then("user should see services for all projects")
     public void user_should_see_services_for_all_projects() {
 
@@ -35,28 +27,33 @@ public class selectService_step_definitions {
 
     }
 
-    // selecting services after you project has been selected
 
-    @When("user select Service")
-    public void userSelectService() {
+    @And("user select {string} from Service dropdown menu")
+    public void userSelectFromServiceDropdownMenu(String service) {
+        mainPage.serviceBtn.click();
+        FacsUtils.selectService(service);
+    }
 
-        Actions actions = new Actions(Driver.getDriver());
+    @Then("user should see {string} service page page")
+    public void userShouldSeeServicePagePage(String serviceHeader) {
+        Assert.assertEquals(serviceHeader, mainPage.projectsHeader.getText());
+    }
 
-        actions.moveToElement(mainPage.projectName).doubleClick().perform();
 
+    @Then("assert services dropdown contains services from the datatable")
+    public void assert_services_dropdown_contains_services_from_the_datatable(List<String> expectedServiceTray) {
 
         mainPage.serviceBtn.click();
 
-
-    }
-
-    @Then("user should see all services for the current project")
-    public void userShouldSeeAllServicesForTheCurrentProject() {
+        List<String> actualServiceTray = new ArrayList<>();
 
         for (WebElement webElement : mainPage.serviceTray) {
-            Assert.assertTrue(webElement.isDisplayed());
+            actualServiceTray.add(webElement.getText());
         }
 
+        Assert.assertEquals(expectedServiceTray, actualServiceTray);
+
     }
+
 
 }

@@ -18,10 +18,13 @@ public class MainPage {
     @FindBy(xpath = "//h2")
     public WebElement projectsHeader;
 
+    @FindBy(css = ".custom-select-opener")
+    public WebElement defaultProject;
 
-    // i was not able to get the select tag to work
-    @FindBy(xpath = "//select[@class='header__project-select']")
-    public WebElement dropDown;
+    @FindBy(xpath = "//input[@class='header__search-bar__input']")
+    public WebElement searchInput;
+
+
 
     @FindBy(xpath = "(//div[.='Test Project'])[2]")
     public WebElement projectName;
@@ -44,14 +47,20 @@ public class MainPage {
     @FindBy(xpath = "//button[@id='new']")
     public WebElement newBtn;
 
-    @FindBy(xpath = "//div[@class='entry-form-service__status_disable_click']")
-    public WebElement saveStatus;
+    @FindBy(xpath = "//div[@class='entry-form-service__status-notify']")
+    public WebElement statusNotify;
 
     @FindBy(xpath = "(//div[.='QA Candidate'])[2]")
     public WebElement newEntry;
 
     @FindBy(xpath = "//button[@id='deleteGridSelection']")
     public WebElement deleteEntry;
+
+    @FindBy(xpath = "//div[@class='header__menu']")
+    public WebElement menuBtn;
+
+    @FindBy(xpath = "//div[@id='facs-main-column-menu']")
+    public WebElement menuColumns;
 
 
 

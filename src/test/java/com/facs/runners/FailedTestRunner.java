@@ -6,7 +6,7 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        glue = "com/trycloud/step_definitions",
+        glue = "com/facs/step_definitions",
         features = "@target/rerun.txt"
 )
 

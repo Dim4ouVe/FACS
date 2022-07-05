@@ -28,6 +28,7 @@ public class Driver {
 
 
             switch (browserType) {
+
                 case "chrome":
                     WebDriverManager.chromedriver().setup();
                     driverPool.set(new ChromeDriver());
@@ -40,6 +41,8 @@ public class Driver {
                     driverPool.get().manage().window().maximize();
                     driverPool.get().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
                     break;
+
+
 
             }
         }
